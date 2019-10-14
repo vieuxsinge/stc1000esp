@@ -1,0 +1,27 @@
+
+stc1000p hy 0.5
+stc1000p tc 0
+stc1000p sa 0
+stc1000p cd 0
+stc1000p hd 0
+stc1000p rp false
+
+stc1000p psp 0 0 0
+stc1000p pdh 0 0 0
+
+stc1000p psp 1 0 16
+stc1000p pdh 1 0 4
+stc1000p psp 1 1 17
+stc1000p pdh 1 1 24
+stc1000p psp 1 2 18
+stc1000p pdh 1 2 24
+stc1000p psp 1 3 19
+stc1000p pdh 1 3 24
+stc1000p psp 1 4 20
+stc1000p pdh 1 4 24
+stc1000p psp 1 5 21
+stc1000p pdh 1 5 0
+
+stc1000p psp 2 0 18
+stc1000p pdh 2 0 0
+
