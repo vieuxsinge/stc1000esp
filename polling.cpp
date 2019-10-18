@@ -21,13 +21,13 @@ static auto temperaturePoller = Poller<float>(POLL_DELAY, [] (float* data) {
 static auto heatingPoller = Poller<bool>(POLL_DELAY, [] (bool* data) {
   return stc1000p.readHeating(data);
 }, [] (bool data) {
-  return mqttPublishF("heating", "%s", data?"true":"false");
+  return mqttPublishF("heating", "%d", data);
 });
 
 static auto coolingPoller = Poller<bool>(POLL_DELAY, [] (bool* data) {
   return stc1000p.readCooling(data);
 }, [] (bool data) {
-  return mqttPublishF("cooling", "%s", data?"true":"false");
+  return mqttPublishF("cooling", "%d", data);
 });
 
 void polling_start() {
