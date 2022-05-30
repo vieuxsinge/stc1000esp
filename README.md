@@ -1,8 +1,6 @@
-# stc1000esp
+# STC1000esp
 
-ESP8266 firmware to make STC1000 thermostat communicate over WiFi.
-
-stc1000esp allows you to enable WiFi communication on your STC1000 in 3 steps:
+This is an ESP8266 firmware to add Wifi abilities to your STC1000 thermostat.
 
 1. Flash your STC1000 with [STC1000+ COM firmware](https://github.com/matsstaff/stc1000p)
 1. Connect the STC1000 to a ESP8266 board
@@ -10,16 +8,29 @@ stc1000esp allows you to enable WiFi communication on your STC1000 in 3 steps:
 
 ## Features
 
-stc1000esp provides:
-
-- WiFi config: Provide WiFi AP for configuration phase
+- WiFi config: Provides a WiFi Access Point to help during the configuration phase
 - OTA: Over The Air reprogrammation using Arduino OTA method
 - Telnet Shell: Configure all parameters through shell and access STC1000+
-- MQTT: Publish STC1000 data to MQTT broker
+- MQTT: Publish STC1000 data to an MQTT broker
+
+You could then plug this to a grafana server for instance, in order to have
+supervision. We [made a script](https://github.com/vieuxsinge/supervision)
+to help with this.
+
+## Tooling
+
+Once you have these thermostat installed, you might want to use these tools to
+use them. We've made a few scripts to help :
+
+If you want to retrieve the list of thermostats :
+
+```bash
+./scripts/list-ota.sh
+```
 
 ## Getting started
 
-Using ESP8266 + STC1000 is not a straight forward setup to make a WiFi thermostat.
+Using ESP8266 + STC1000 is not a straight-forward setup to make a WiFi thermostat.
 You could rather use relays, display and buttons directly connected to an ESP board.
 
 We use this setup because:
@@ -114,5 +125,3 @@ This project use a lot of great Arduino/ESP librairies, thanks!
 * [marvinroger/async-mqtt-client](https://github.com/marvinroger/async-mqtt-client) - Asynchronous MQTT client for ESP
 * [fredericsureau/arduino-stc1000p](https://github.com/vieuxsinge/arduino-stc1000p) - Arduino communication with the STC1000+
 * [fredericsureau/arduino-shell](https://github.com/vieuxsinge/arduino-shell) - Shell for arduino
-
-
